@@ -1,4 +1,4 @@
-import type { Match, Parser } from './types';
+import { Match, Parser, Sports } from './types';
 
 export class EventParser implements Parser {
     makeEventName(match: Match): string {
@@ -6,12 +6,12 @@ export class EventParser implements Parser {
         if (!participant1 || !participant2) return "Exception: invalid sport";
 
         switch (sport) {
-            case 'soccer':
-            case 'volleyball':
-            case 'basketball':
+            case Sports.SOCCER:
+            case Sports.VOLLEYBALL:
+            case Sports.BASKETBALL:
                 return `${participant1} - ${participant2}`;
-            case 'tennis':
-            case 'handball':
+            case Sports.TENNIS:
+            case Sports.HANDBALL:
                 return `${participant1} vs ${participant2}`;
             default:
                 return 'Exception: invalid sport'
@@ -24,7 +24,7 @@ export class EventParser implements Parser {
         if (!score) return 'Exception: invalid sport';
 
         if (typeof score === 'string') {
-            if (sport === 'soccer' || sport === 'handball') return score;
+            if (sport === Sports.SOCCER || sport === Sports.HANDBALL) return score;
 
             const scores = /([0-9]+\:[0-9]+),([0-9]+\:[0-9]+),([0-9]+\:[0-9]+),([0-9]+\:[0-9]+)/.exec(score);
             if (!scores) return 'Invalid format';
