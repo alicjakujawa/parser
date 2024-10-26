@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "start": "node ./dist/bundle.js"
+  }
+}

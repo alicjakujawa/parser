@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "outFile": "./dist/bundle.js",
+      "module": "AMD",
+      "target": "es2019",
+      "lib": ["es2019", "dom"],
+      "resolveJsonModule": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "rootDir": "./src",
+      "strict": true
+  },
+  "include": ["src/**/*"]
+}
